@@ -1,0 +1,15 @@
+[package]
+name = "certicateverificationsystem"
+version = "1.0.0"
+authors = []
+
+[addresses]
+janani_addr = "c489a911f045d4a54202a2916d8d665bc8da8f01732496afdbc163073608ce5b"
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dev-dependencies]
