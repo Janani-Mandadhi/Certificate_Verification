@@ -11,7 +11,7 @@ A decentralized certificate verification system built with Move smart contracts,
 ### Blockchain
 - **Move Language**: Smart contracts for Aptos blockchain
 - **Aptos SDK**: Blockchain interaction
-- 
+ 
 ### Backend
 - **Node.js**: Runtime environment
 - **Express.js**: Web framework
@@ -27,7 +27,6 @@ A decentralized certificate verification system built with Move smart contracts,
 
 ## 📁 Project Structure
 
-```
 certificate-verification-system/
 ├── move_contracts/          # Move Smart Contracts
 │   ├── sources/
@@ -51,36 +50,21 @@ certificate-verification-system/
 ```
 
 ## 🚀 Quick Start
-
-### Prerequisites
-
 - Node.js (v16 or higher)
 - MongoDB
 - Aptos CLI
 - IPFS node (optional)
-
 ### 1. Clone the Repository
-
-```bash
 git clone https://github.com/your-username/certificate-verification-system.git
 cd certificate-verification-system
-```
-
 ### 2. Setup Move Contracts
-
-```bash
 cd move_contracts
 aptos init
 aptos move compile
 aptos move publish
-```
-
 ### 3. Setup Backend
-
-```bash
 cd backend
 npm install
-
 # Create .env file
 cat > .env << EOF
 PORT=5000
@@ -90,28 +74,17 @@ APTOS_NODE_URL=https://fullnode.devnet.aptoslabs.com/v1
 APTOS_FAUCET_URL=https://faucet.devnet.aptoslabs.com
 MODULE_ADDRESS=0x1
 EOF
-
-npm start
-```
-
 ### 4. Setup Frontend
-
-```bash
 cd frontend
 npm install
-
 # Create .env file
 cat > .env << EOF
 REACT_APP_API_URL=http://localhost:5000/api
 REACT_APP_APTOS_NODE_URL=https://fullnode.devnet.aptoslabs.com/v1
 REACT_APP_MODULE_ADDRESS=0x1
 EOF
-
 npm start
-```
-
 ## 📝 Environment Variables
-
 ### Backend (.env)
 ```bash
 PORT=5000
@@ -121,22 +94,15 @@ APTOS_NODE_URL=https://fullnode.devnet.aptoslabs.com/v1
 APTOS_FAUCET_URL=https://faucet.devnet.aptoslabs.com
 MODULE_ADDRESS=0x1
 IPFS_API_URL=http://localhost:5001
-```
-
 ### Frontend (.env)
-```bash
 REACT_APP_API_URL=http://localhost:5000/api
 REACT_APP_APTOS_NODE_URL=https://fullnode.devnet.aptoslabs.com/v1
 REACT_APP_MODULE_ADDRESS=0x1
-```
-
 ## 🔐 API Endpoints
-
 ### Authentication
 - `POST /api/auth/register` - Register new user
 - `POST /api/auth/login` - Login user
 - `GET /api/auth/profile` - Get user profile
-
 ### Certificates
 - `POST /api/certificates/issue` - Issue new certificate (Admin/Issuer only)
 - `GET /api/certificates/verify/:certHash` - Verify certificate
@@ -144,19 +110,13 @@ REACT_APP_MODULE_ADDRESS=0x1
 - `POST /api/certificates/revoke/:certHash` - Revoke certificate
 - `GET /api/certificates` - Get user's certificates
 - `GET /api/certificates/details/:certHash` - Get certificate details
-
 ## 🏗 Smart Contract Functions
-
 ### Access Control
-```move
 public entry fun initialize(account: &signer)
 public entry fun add_issuer(account: &signer, issuer: address)
 public entry fun remove_issuer(account: &signer, issuer: address)
 public fun is_authorized_issuer(issuer: address): bool
-```
-
 ### Certificate Issuance
-```move
 public entry fun issue_certificate(
     account: &signer,
     recipient: address,
@@ -164,57 +124,41 @@ public entry fun issue_certificate(
     metadata_uri: String
 )
 public fun get_certificate(cert_hash: String): (address, address, String, u64, bool)
-```
-
 ### Certificate Verification
-```move
 public fun verify_certificate(cert_hash: String): (bool, bool, bool, address, address, String, u64)
 public fun quick_verify(cert_hash: String): bool
-```
-
 ### Certificate Revocation
-```move
 public entry fun revoke_certificate(
     account: &signer,
     cert_hash: String,
     reason: String
 )
 public fun is_revoked(cert_hash: String): bool
-```
-
 ## 👥 User Roles
-
 ### Admin
 - Manage all aspects of the system
 - Add/remove issuers
 - Issue, verify, and revoke certificates
 - View all certificates
-
 ### Issuer
 - Issue certificates
 - Revoke their own certificates
 - View issued certificates
-
 ### Verifier
 - Verify any certificate
 - View verification history
-
 ### User
 - View their own certificates
 - Verify certificates
 - Basic access to system
-
 ## 🔄 Workflow
-
 1. **Registration**: Institution registers and gets approved as an issuer
 2. **Certificate Issuance**: Issuer creates certificate with recipient details
 3. **Blockchain Storage**: Certificate hash and metadata stored on Aptos blockchain
 4. **IPFS Storage**: Full certificate data stored on IPFS
 5. **Verification**: Anyone can verify certificate using hash or QR code
 6. **Revocation**: Original issuer can revoke certificate if needed
-
 ## 📱 Usage Examples
-
 ### Issue a Certificate
 ```javascript
 const certificateData = {
@@ -228,73 +172,56 @@ const certificateData = {
     graduationDate: "2024-05-15"
   }
 };
-
 const response = await axios.post('/api/certificates/issue', certificateData);
-```
-
 ### Verify a Certificate
 ```javascript
 const certHash = "a1b2c3d4e5f6...";
 const response = await axios.get(`/api/certificates/verify/${certHash}`);
-
 if (response.data.isValid) {
   console.log("Certificate is valid!");
 } else {
   console.log("Certificate is invalid or revoked");
 }
-```
-
 ## 🧪 Testing
-
 ### Run Backend Tests
 ```bash
 cd backend
 npm test
 ```
-
 ### Run Frontend Tests
 ```bash
 cd frontend
 npm test
 ```
-
 ### Test Smart Contracts
 ```bash
 cd move_contracts
 aptos move test
 ```
-
 ## 🚀 Deployment
-
 ### Deploy Smart Contracts
 ```bash
 cd move_contracts
 aptos move publish --named-addresses certificate_system=0xYOUR_ADDRESS
 ```
-
 ### Deploy Backend (PM2)
 ```bash
 cd backend
 npm install pm2 -g
 pm2 start server.js --name "cert-backend"
 ```
-
 ### Deploy Frontend
 ```bash
 cd frontend
 npm run build
 # Deploy build folder to your hosting service
 ```
-
 ## 🔧 Configuration
-
 ### Database Configuration
 Update `backend/config/database.js` with your MongoDB settings:
-
 ```javascript
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/certificate_verification';
 ```
-
 ### Blockchain Configuration
 Update `backend/utils/aptos.js` with your Aptos network settings:
 
@@ -340,5 +267,6 @@ TEAM MEMBERS
     3.CHARITHA SRI LUKKA-charithasrilukka@gmail.com
     PPT LINK:
 https://www.canva.com/design/DAGv1X_fvD8/SrhfR9Xsfj_kFs_OIxmwSg/edit?utm_content=DAGv1X_fvD8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 
 
