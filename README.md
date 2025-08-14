@@ -261,7 +261,7 @@ const MODULE_ADDRESS = process.env.MODULE_ADDRESS || '0x1';
 
 0xba349666182fd20aaa50cf25984dac0d6138a267a41ecbb9bde14b19449e629c
 
-![alt text](image-1.png)
+<img width="1362" height="662" alt="Screenshot 2025-08-14 125737" src="https://github.com/user-attachments/assets/975ea887-4e11-4e18-88e3-4105e9e672e3" />
 
 TEAM NAME:Chain Chasers
 TEAM MEMBERS
@@ -270,6 +270,7 @@ TEAM MEMBERS
     3.CHARITHA SRI LUKKA-charithasrilukka@gmail.com
     PPT LINK:
 https://www.canva.com/design/DAGv1X_fvD8/SrhfR9Xsfj_kFs_OIxmwSg/edit?utm_content=DAGv1X_fvD8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 
 
 
