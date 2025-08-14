@@ -1,0 +1,56 @@
+/* index.css */
+
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a clean font and background color */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f6fa;
+  color: #2f3640;
+  line-height: 1.6;
+}
+
+/* Center container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Buttons */
+button {
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #74b9ff;
+}
+
+/* Input fields */
+input, select, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Card style */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}

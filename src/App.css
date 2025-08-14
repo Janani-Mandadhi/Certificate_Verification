@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+
+.certificate-card {
+  @apply bg-white rounded-lg shadow-md border border-gray-200 transition-all duration-200;
+}
+
+.certificate-card:hover {
+  @apply shadow-lg border-blue-300;
+}
+
+.status-valid {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.status-invalid {
+  @apply bg-red-100 text-red-800 border-red-200;
+}
+
+.status-revoked {
+  @apply bg-yellow-100 text-yellow-800 border-yellow-200;
+}
+
+.loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.certificate-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
