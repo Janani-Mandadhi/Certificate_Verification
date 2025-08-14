@@ -1,8 +1,4 @@
-# Certificate Verification System using Move
-
 A decentralized certificate verification system built with Move smart contracts, Node.js backend, and React frontend. This system allows institutions to issue, verify, and revoke certificates on the blockchain ensuring immutability and authenticity.
-
-## 🚀 Features
 
 - **Decentralized Certificate Issuance**: Issue certificates on blockchain using Move smart contracts
 - **Real-time Verification**: Instantly verify certificate authenticity
@@ -12,12 +8,10 @@ A decentralized certificate verification system built with Move smart contracts,
 - **QR Code Generation**: Generate QR codes for easy certificate sharing
 - **Mobile Responsive**: Works seamlessly on desktop and mobile devices
 
-## 🛠 Tech Stack
-
 ### Blockchain
 - **Move Language**: Smart contracts for Aptos blockchain
 - **Aptos SDK**: Blockchain interaction
-
+- 
 ### Backend
 - **Node.js**: Runtime environment
 - **Express.js**: Web framework
@@ -338,5 +332,13 @@ const MODULE_ADDRESS = process.env.MODULE_ADDRESS || '0x1';
 0xba349666182fd20aaa50cf25984dac0d6138a267a41ecbb9bde14b19449e629c
 
 ![alt text](image-1.png)
+
+TEAM NAME:Chain Chasers
+TEAM MEMBERS
+    1.MANDADHI JANANI-jm0173420@gmail.com
+    2.KROSURI HRITHVIKA SARVANI-sarvanikrosuri@gmail.com
+    3.CHARITHA SRI LUKKA-charithasrilukka@gmail.com
+    PPT LINK:
+https://www.canva.com/design/DAGv1X_fvD8/SrhfR9Xsfj_kFs_OIxmwSg/edit?utm_content=DAGv1X_fvD8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 
