@@ -27,6 +27,7 @@ A decentralized certificate verification system built with Move smart contracts,
 
 ## 📁 Project Structure
 
+
 certificate-verification-system/
 ├── move_contracts/          # Move Smart Contracts
 │   ├── sources/
@@ -48,6 +49,8 @@ certificate-verification-system/
     │   └── utils/
     └── package.json
 ```
+
+
 
 ## 🚀 Quick Start
 - Node.js (v16 or higher)
@@ -267,6 +270,7 @@ TEAM MEMBERS
     3.CHARITHA SRI LUKKA-charithasrilukka@gmail.com
     PPT LINK:
 https://www.canva.com/design/DAGv1X_fvD8/SrhfR9Xsfj_kFs_OIxmwSg/edit?utm_content=DAGv1X_fvD8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 
 
 
